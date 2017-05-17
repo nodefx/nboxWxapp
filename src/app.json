@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/home/home",
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f22f2f",
+    "navigationBarTitleText": "nbotWxapp",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "disableScroll": true
+  }
+}

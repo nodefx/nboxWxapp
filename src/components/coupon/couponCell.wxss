@@ -1,0 +1,24 @@
+.couponContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.valueContainer {
+  flex-direction: column;
+}
+
+.detailContainer {
+  flex-direction: column;
+}
+
+.detailTitleRow {
+  flex-direction: row;
+}
+
+.detailDescriptionA {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+}
+
+.detailDescriptionB {
+}

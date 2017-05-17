@@ -1,0 +1,11 @@
+<template name="couponCell">
+  <view class="valueContainer">
+    <image src="src">
+      <image src="src"></image>
+      <text> </text>
+    </image>
+    <view class="detailContainer" >
+    <view wx:for="descDetails"></view>
+    </view>
+  </view>
+</template>
