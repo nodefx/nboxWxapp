@@ -21,13 +21,25 @@ export const inject = function (...injectArg) {
       constructor(...args) {
         super(...args)
         this.store = this.store || {}
-        injectArg.map((pathVal) => {
-          if (!_StoreObjectCache[pathVal]) {
-            let Cls = require(`../store/${pathVal}`)
-            _StoreObjectCache[pathVal] = new Cls.default()
-          }
-          this.store[pathVal] = _StoreObjectCache[pathVal]
-        })
+        if (typeof injectArg[0] === 'object') {
+          Object.keys(injectArg[0]).map((keys) => {
+            let pathVal = injectArg[0][keys]
+            if (!_StoreObjectCache[pathVal]) {
+              let Cls = require(`../store/${pathVal}`)
+              _StoreObjectCache[pathVal] = new Cls.default()
+            }
+            this.store[pathVal] = _StoreObjectCache[pathVal]
+          })
+        }
+        else {
+          injectArg.map((pathVal) => {
+            if (!_StoreObjectCache[pathVal]) {
+              let Cls = require(`../store/${pathVal}`)
+              _StoreObjectCache[pathVal] = new Cls.default()
+            }
+            this.store[pathVal] = _StoreObjectCache[pathVal]
+          })
+        }
         super.constructor()
       }
     }
